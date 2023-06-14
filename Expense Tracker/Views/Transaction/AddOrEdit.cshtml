@@ -1,0 +1,50 @@
+﻿@model Expense_Tracker.Models.Transaction
+
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row bg-opacity-75">
+    <div class="col-md-7 ">
+        <form asp-action="AddOrEdit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="TransactionId" value="@Model.TransactionId" />
+            <div class="form-group">
+
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" asp-items="@(ViewBag.CategoryList as SelectList)" class ="form-control bg-dark text-light">
+                </select>
+
+                @*<label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class ="form-control bg-dark text-light" asp-items="ViewBag.CategoryId"></select>*@
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control bg-dark text-light" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Note" class="control-label"></label>
+                @*<input asp-for="Note" class="form-control" />*@
+                <textarea asp-for="Note" class="form-control bg-dark text-light">Notes</textarea>
+                <span asp-validation-for="Note" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control bg-dark text-light" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Submit" class="btn btn-outline-success" style="width: 100%"  />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

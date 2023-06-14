@@ -1,0 +1,54 @@
+﻿@model Expense_Tracker.Models.Category
+
+@{
+    
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<div class="row bg-opacity-75">
+    <div class="col-md-7">
+        <form asp-action="AddOrEdit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+            <div class="mb-3 col-12 ">
+                <div class="btn-group col-12" role="group" aria-label="Basic radio toggle button group">
+                <div class="col-6">
+                  <input type="radio"  class="btn-check"  name="Type" id="btnradio2" autocomplete="off" value="Income" asp-for="Type" checked>
+                  <label class="btn btn-outline-primary" style="width: 100%;" for="btnradio2">Income</label>
+                </div>
+                <div class="col-6">
+                  <input type="radio"  class="btn-check"  name="Type" id="btnradio1" autocomplete="off" value="Expense" asp-for="Type" checked>
+                  <label class="btn btn-outline-primary" style="width: 100%;"  for="btnradio1">Expense</label>
+                </div>
+                 
+                </div>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control bg-dark text-light" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Icon" class="control-label"></label>
+                <input asp-for="Icon" class="form-control bg-dark text-light" />
+                <span asp-validation-for="Icon" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <input type="submit" value="Submit" class="btn btn-outline-success" style="width: 100%"  />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-primary" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

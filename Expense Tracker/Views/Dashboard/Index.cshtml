@@ -1,0 +1,105 @@
+﻿
+<div class="row mb-4">
+
+    <div class="col-md-4">
+        <div class="d-flex flex-row widget summary income">
+            <div class="d-flex flex-column justify-content-center p-5 bg-success">
+                <i class="bi bi-currency-rupee "></i>
+            </div>
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead">Total Income</span>
+                <h1 class="display-6 fw-bold">@ViewBag.TotalIncome</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="d-flex flex-row widget summary expense">
+            <div class="d-flex flex-column justify-content-center p-5 bg-danger">
+                <i class="bi bi-currency-rupee"></i>
+            </div>
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead">Total Expense</span>
+                <h1 class="display-6 fw-bold">@ViewBag.TotalExpense</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="d-flex flex-row widget summary balance">
+            <div class="d-flex flex-column justify-content-center p-5 bg-success">
+                <i class="bi bi-currency-rupee"></i>
+            </div>
+            <div class="d-flex flex-column m-auto py-3">
+                <span class="lead">Balance</span>
+                <h1 class="display-6 fw-bold">@ViewBag.Balance</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a asp-controller="Transaction" asp-action="AddOrEdit" class="btn btn-outline-info mb-3" style="width:100%"><b>New Transaction</b></a>
+
+@*Recent Transactions and More*@
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="widget">
+            <div class="p-4">
+                <h5 class="fw-bold">Recent Transactions</h5>
+            </div>
+            <div class="px-4 pb-4">
+                <table class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Category
+                                </th>
+                                <th>
+                                    Amount
+                                </th>
+                                <th>
+                                    Note
+                                </th>
+                                <th>
+                                    Date
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    @foreach (var item in ViewBag.RecentTransactions) {
+                            <tr>
+                                <td>
+                                    @item.CategoryWithIcon
+                                </td>
+                                <td>
+                                    @item.Amount
+                                </td>
+                                <td>
+                                    @item.Note
+                                </td>
+                                <td>
+                                    @item.Date
+                                </td>
+                                <td>
+                                    <a asp-action="Transaction/AddOrEdit" asp-route-id="@item.TransactionId" class="btn btn-outline-info">Edit</a>
+                                    <a asp-action="Transaction/Details" asp-route-id="@item.TransactionId" class="btn btn-outline-warning">Details</a>
+                                    <a asp-action="Transaction/Delete" asp-route-id="@item.TransactionId" class="btn btn-outline-danger ">Delete</a>
+                                </td>
+                            </tr>
+                    }
+                        </tbody>
+                </table>
+                <div style="width:100%">
+                    <a asp-controller="Transaction" asp-action="Index" class="btn btn-outline-info m-3" style="width:47%">Go to Transaction</a>
+                    <a asp-controller="Category" asp-action="Index" class="btn btn-outline-warning m-3" style="width:47%">Go to Category</a>
+                    
+                </div>
+            </div>
+       </div>
+    </div>
+</div>
+
+
+
