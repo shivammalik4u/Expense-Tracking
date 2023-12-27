@@ -83,9 +83,9 @@
                                     @item.Date
                                 </td>
                                 <td>
-                                    <a asp-action="Transaction/AddOrEdit" asp-route-id="@item.TransactionId" class="btn btn-outline-info">Edit</a>
-                                    <a asp-action="Transaction/Details" asp-route-id="@item.TransactionId" class="btn btn-outline-warning">Details</a>
-                                    <a asp-action="Transaction/Delete" asp-route-id="@item.TransactionId" class="btn btn-outline-danger ">Delete</a>
+                                    <a asp-controller="Transaction" asp-action="AddOrEdit" asp-route-id="@item.TransactionId" class="btn btn-outline-info">Edit</a>
+                                    <a asp-controller="Transaction" asp-action="Details" asp-route-id="@item.TransactionId" class="btn btn-outline-warning">Details</a>
+                                    <a asp-controller="Transaction" asp-action="Delete" asp-route-id="@item.TransactionId" class="btn btn-outline-danger ">Delete</a>
                                 </td>
                             </tr>
                     }

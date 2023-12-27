@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Chshi\\OneDrive\\Documents\\C# Practice\\Shivam Malik\\ASP.net MVC\\Expense Tracker\\Expense Tracker\\Expense Tracker.csproj": {}
+    "C:\\Personal Files SSD Specific\\Programming\\Projects\\Expense Tracker\\Expense Tracker\\Expense Tracker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Chshi\\OneDrive\\Documents\\C# Practice\\Shivam Malik\\ASP.net MVC\\Expense Tracker\\Expense Tracker\\Expense Tracker.csproj": {
+    "C:\\Personal Files SSD Specific\\Programming\\Projects\\Expense Tracker\\Expense Tracker\\Expense Tracker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Chshi\\OneDrive\\Documents\\C# Practice\\Shivam Malik\\ASP.net MVC\\Expense Tracker\\Expense Tracker\\Expense Tracker.csproj",
+        "projectUniqueName": "C:\\Personal Files SSD Specific\\Programming\\Projects\\Expense Tracker\\Expense Tracker\\Expense Tracker.csproj",
         "projectName": "Expense Tracker",
-        "projectPath": "C:\\Users\\Chshi\\OneDrive\\Documents\\C# Practice\\Shivam Malik\\ASP.net MVC\\Expense Tracker\\Expense Tracker\\Expense Tracker.csproj",
+        "projectPath": "C:\\Personal Files SSD Specific\\Programming\\Projects\\Expense Tracker\\Expense Tracker\\Expense Tracker.csproj",
         "packagesPath": "C:\\Users\\Chshi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Chshi\\OneDrive\\Documents\\C# Practice\\Shivam Malik\\ASP.net MVC\\Expense Tracker\\Expense Tracker\\obj\\",
+        "outputPath": "C:\\Personal Files SSD Specific\\Programming\\Projects\\Expense Tracker\\Expense Tracker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Chshi\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

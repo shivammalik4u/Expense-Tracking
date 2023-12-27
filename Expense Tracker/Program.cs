@@ -15,6 +15,7 @@ namespace Expense_Tracker
             builder.Services.AddDbContext<ApplicationDbContext>(option => 
             option.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
+          
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
